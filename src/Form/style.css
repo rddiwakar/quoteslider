@@ -1,0 +1,30 @@
+.form-container {
+    padding:20px;
+    width:80%;
+    margin:auto;
+    background-color:white;
+    text-align: center;
+  }
+  .hero-section{
+    height:40vh;
+    width:75%;
+    margin:auto;
+    border: 1px outset rgb(155, 139, 139);
+    margin-bottom: 30px;
+    box-shadow:rgb(155, 139, 139) 2px 3px 2px;
+  }
+ 
+  .btn-primary {
+    width: 120px;
+    border: 0;
+    padding: 8px;
+    border-radius: 15px;
+    color: white;
+    background: #00d4ff;
+    cursor: pointer;
+  }
+  .btnPosition{
+      display: flex;
+      justify-content: space-between;
+  }
+  

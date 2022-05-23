@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Form from "./Form";
+import "./styles.css";
 
-function App() {
+export default function App() {
+  const [data, setData] = useState([]);
+  const settingData = (obj)=>{
+    setData([...data,obj])
+  }
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+
+  const _handleIndexChange = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const _handleNext = (currentIndex) => {
+    setCurrentIndex(currentIndex + 1);
+  };
+  const _handlePrev = (currentIndex) =>{
+    setCurrentIndex(currentIndex - 1)
+  }
+
+  const _handleComplete = () => {
+    console.log({...data})
+    alert("check res in console.log")
+    setData([]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form
+          currentIndex={currentIndex}
+          handleNext={_handleNext}
+          handleComplete={_handleComplete}
+          handleIndexChange={_handleIndexChange}
+          handlePrev = {_handlePrev}
+          settingData={settingData}
+        />     
     </div>
   );
 }
-
-export default App;
